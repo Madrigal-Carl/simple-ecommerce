@@ -8,12 +8,20 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Support\Str;
 
-#[Fillable(['user_id', 'price'])]
+#[Fillable(['reference_number', 'user_id', 'price'])]
 class Order extends Model
 {
     /** @use HasFactory<OrderFactory> */
     use HasFactory;
+
+    protected static function booted(): void
+    {
+        static::creating(function (Order $order): void {
+            $order->reference_number ??= now()->format('Y').'-'.Str::upper(Str::random(10));
+        });
+    }
 
     /**
      * Get the user who owns the order.

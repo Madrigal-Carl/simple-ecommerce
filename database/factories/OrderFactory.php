@@ -19,6 +19,7 @@ class OrderFactory extends Factory
     public function definition(): array
     {
         return [
+            'reference_number' => now()->format('Y').'-'.strtoupper(fake()->unique()->bothify('????####')),
             'user_id' => User::factory(),
             'price' => fake()->randomFloat(2, 1, 5000),
         ];

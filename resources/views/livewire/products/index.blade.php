@@ -62,7 +62,7 @@
                                             <flux:icon name="cube" variant="mini" />
                                         </div>
                                         <div class="min-w-0">
-                                            <flux:heading class="truncate text-lg">{{ $product->name }}</flux:heading>
+                                            <flux:heading class="truncate text-lg">{{ ucwords($product->name) }}</flux:heading>
                                             <flux:text class="block max-w-56 truncate text-xs">{{ $product->description }}</flux:text>
                                         </div>
                                         <div class="ml-auto flex shrink-0 items-center gap-2 sm:hidden">

@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Schema;
 
 test('commerce tables contain the required columns', function () {
     expect(Schema::hasColumns('products', ['name', 'description', 'quantity', 'price', 'status']))->toBeTrue()
-        ->and(Schema::hasColumns('orders', ['user_id', 'price']))->toBeTrue()
+        ->and(Schema::hasColumns('orders', ['reference_number', 'user_id', 'price']))->toBeTrue()
         ->and(Schema::hasColumns('order_items', ['order_id', 'product_id', 'price', 'quantity']))->toBeTrue();
 });
 
