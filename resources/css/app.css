@@ -1,5 +1,6 @@
 @import 'tailwindcss';
 @import '../../vendor/livewire/flux/dist/flux.css';
+@config '../../tailwind.config.js';
 
 @source '../views';
 @source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
@@ -59,10 +60,15 @@
     @apply  !mb-0 !leading-tight;
 }
 
-input:focus[data-flux-control],
+    input:focus[data-flux-control],
 textarea:focus[data-flux-control],
 select:focus[data-flux-control] {
-    @apply outline-hidden ring-2 ring-accent ring-offset-2 ring-offset-accent-foreground;
+        @apply outline-hidden ring-2 ring-accent ring-offset-2 ring-offset-accent-foreground;
+}
+
+[data-eco-auth] [data-flux-control]:focus {
+    border-color: #E60000;
+    --tw-ring-color: #E60000;
 }
 
 /* \[:where(&)\]:size-4 {

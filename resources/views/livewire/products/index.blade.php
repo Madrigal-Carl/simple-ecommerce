@@ -10,7 +10,7 @@
                 <flux:subheading class="mt-1">{{ __('Manage your product catalog and inventory.') }}</flux:subheading>
             </div>
 
-            <flux:button variant="primary" icon="plus" class="h-10" wire:click="openCreateModal">
+            <flux:button variant="primary" icon="plus" class="h-10 !rounded-brand-md !bg-brand-tertiary !text-white hover:!bg-brand-tertiary/90 focus-visible:!ring-brand-tertiary" wire:click="openCreateModal">
                 {{ __('Add product') }}
             </flux:button>
         </div>
@@ -241,7 +241,7 @@
                 <flux:modal.close>
                     <flux:button variant="subtle" type="button">{{ __('Cancel') }}</flux:button>
                 </flux:modal.close>
-                <flux:button variant="primary" type="submit">{{ __('Save product') }}</flux:button>
+                <flux:button variant="primary" type="submit" class="!rounded-brand-md !bg-brand-tertiary !text-white hover:!bg-brand-tertiary/90 focus-visible:!ring-brand-tertiary">{{ __('Save product') }}</flux:button>
             </div>
         </form>
     </flux:modal>
